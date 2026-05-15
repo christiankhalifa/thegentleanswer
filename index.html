@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Gentle Answer — Dr. Gordon Nickel</title>
+<meta name="description" content="The scholarly and peaceable work of Dr. Gordon Nickel: writings on the Qur'an and the Bible, the history of Christian–Muslim relations in South Asia, videos, translations, and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    --navy-deep: #0a1f3a;
+    --navy: #14365e;
+    --navy-mid: #1f4773;
+    --teal-deep: #0c5b5b;
+    --teal: #1f7a7a;
+    --teal-bright: #3ba0a0;
+    --teal-pale: #d9ebea;
+    --cream: #f4ecdc;
+    --cream-soft: #faf5e9;
+    --paper: #fbf7ec;
+    --gold: #b8924a;
+    --gold-soft: #d6b572;
+    --ink: #18181b;
+    --text: #2a2a2e;
+    --text-muted: #5e5e63;
+    --rule: rgba(20, 54, 94, 0.18);
+
+    --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+    --display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    --majuscule: "Cinzel", "Cormorant Garamond", serif;
+
+    --max: 1200px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    font-feature-settings: "liga", "onum", "kern";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Subtle paper texture */
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(31, 122, 122, 0.08), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(20, 54, 94, 0.07), transparent 55%);
+  }
+
+  ::selection { background: var(--teal-pale); color: var(--navy-deep); }
+
+  a { color: var(--navy); text-decoration: none; transition: color .25s ease; }
+  a:hover { color: var(--teal-deep); }
+
+  /* ---------- Top Bar ---------- */
+  .topstrip {
+    background: var(--navy-deep);
+    color: var(--cream);
+    font-family: var(--majuscule);
+    font-size: .68rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    padding: .55rem var(--gutter);
+    text-align: center;
+    border-bottom: 1px solid rgba(184, 146, 74, 0.35);
+  }
+  .topstrip span { color: var(--gold-soft); }
+
+  /* ---------- Header ---------- */
+  header.site {
+    background: var(--cream-soft);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(6px);
+    background: rgba(251, 247, 236, 0.92);
+  }
+  .site-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1.1rem var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .brand-mark {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal-deep) 100%);
+    display: grid; place-items: center;
+    color: var(--gold-soft);
+    font-family: var(--majuscule);
+    font-weight: 700;
+    font-size: 1.15rem;
+    box-shadow: inset 0 0 0 2px rgba(214, 181, 114, 0.5), 0 1px 2px rgba(10,31,58,.18);
+    flex-shrink: 0;
+  }
+  .brand-text { line-height: 1.05; }
+  .brand-text .t1 {
+    font-family: var(--display);
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--navy-deep);
+    letter-spacing: .005em;
+  }
+  .brand-text .t2 {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .28em;
+    color: var(--teal-deep);
+    text-transform: uppercase;
+    margin-top: .25rem;
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: .25rem;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .55rem .95rem;
+    font-family: var(--majuscule);
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    position: relative;
+    transition: color .25s ease;
+  }
+  .tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: 4px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .tab-btn:hover { color: var(--teal-deep); }
+  .tab-btn[aria-selected="true"] { color: var(--teal-deep); }
+  .tab-btn[aria-selected="true"]::after { width: calc(100% - 1.5rem); }
+
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: .5rem .7rem;
+    font-family: var(--majuscule);
+    font-size: .65rem;
+    letter-spacing: .2em;
+    color: var(--navy);
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 880px) {
+    nav.tabs {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--cream-soft);
+      border-bottom: 1px solid var(--rule);
+      padding: .5rem var(--gutter);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+    }
+    nav.tabs.open { max-height: 500px; padding: .5rem var(--gutter) 1rem; }
+    .tab-btn { text-align: left; padding: .65rem .25rem; border-bottom: 1px solid var(--rule); }
+    .tab-btn::after { display: none; }
+    .tab-btn[aria-selected="true"] { color: var(--gold); }
+    .menu-toggle { display: block; }
+  }
+
+  /* ---------- Page sections ---------- */
+  main { display: block; }
+  .page {
+    display: none;
+    animation: fadeIn .55s ease both;
+  }
+  .page.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* Decorative rule */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--gold);
+    margin: 1.25rem 0;
+  }
+  .ornament::before, .ornament::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    opacity: .55;
+  }
+  .ornament svg { width: 18px; height: 18px; }
+
+  /* Section headings */
+  .eyebrow {
+    font-family: var(--majuscule);
+    font-size: .72rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    margin: 0 0 .75rem;
+  }
+  h1.display {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6vw, 4.6rem);
+    line-height: 1.04;
+    letter-spacing: -.005em;
+    color: var(--navy-deep);
+    margin: 0 0 1.25rem;
+  }
+  h1.display em {
+    font-style: italic;
+    color: var(--teal-deep);
+    font-weight: 500;
+  }
+  h2.section {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+    color: var(--navy-deep);
+    margin: 0 0 .65rem;
+    letter-spacing: -.005em;
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--navy-deep);
+    margin: 0 0 .5rem;
+    letter-spacing: -.005em;
+  }
+  p { margin: 0 0 1rem; }
+  p.lede {
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: clamp(3rem, 7vw, 6rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(800px 400px at 80% 20%, rgba(31, 122, 122, 0.10), transparent 60%),
+      radial-gradient(700px 500px at 10% 80%, rgba(20, 54, 94, 0.07), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr .9fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    position: relative;
+  }
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+  .hero-eyebrow {
+    font-family: var(--majuscule);
+    font-size: .75rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    margin: 0 0 1.5rem;
+  }
+  .hero-eyebrow .dot {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin: 0 .5em;
+    transform: translateY(-3px);
+  }
+  .hero p.lede { margin-top: 1.5rem; max-width: 52ch; }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9rem;
+    margin-top: 2rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .85rem 1.4rem;
+    font-family: var(--majuscule);
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    border: 1px solid var(--navy-deep);
+    background: var(--navy-deep);
+    color: var(--cream-soft);
+    cursor: pointer;
+    transition: all .3s ease;
+    border-radius: 2px;
+  }
+  .btn:hover { background: var(--teal-deep); border-color: var(--teal-deep); color: var(--cream-soft); transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--navy-deep); }
+  .btn.ghost:hover { background: var(--navy-deep); color: var(--cream-soft); }
+  .btn .arrow { transition: transform .3s ease; }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* Book cover mockup */
+  .book {
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book-cover {
+    width: min(320px, 70vw);
+    aspect-ratio: 2/3;
+    background:
+      linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 35%, var(--teal-deep) 100%);
+    border-radius: 2px 6px 6px 2px;
+    box-shadow:
+      -8px 6px 30px rgba(10, 31, 58, 0.35),
+      inset 4px 0 0 rgba(0,0,0,0.18),
+      inset 8px 0 0 rgba(184, 146, 74, 0.18);
+    transform: rotateY(-12deg) rotateX(2deg);
+    transition: transform .8s cubic-bezier(.2,.7,.3,1);
+    padding: 2.2rem 1.8rem;
+    color: var(--cream-soft);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .book-cover:hover { transform: rotateY(-6deg) rotateX(1deg) scale(1.02); }
+  .book-cover::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(214, 181, 114, 0.45);
+    pointer-events: none;
+    border-radius: 1px;
+  }
+  .book-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 6px),
+      radial-gradient(circle at 50% 30%, rgba(214, 181, 114, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .book-top {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .book-top .who {
+    font-family: var(--majuscule);
+    font-size: .6rem;
+    letter-spacing: .35em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+  }
+  .book-title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: var(--display);
+    font-size: 1.85rem;
+    line-height: 1.05;
+    color: var(--cream-soft);
+    margin: 1rem 0;
+  }
+  .book-title em { font-style: italic; color: var(--gold-soft); }
+  .book-sub {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: .92rem;
+    color: rgba(245, 239, 225, 0.78);
+    line-height: 1.4;
+  }
+  .book-author {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: var(--majuscule);
+    font-size: .65rem;
+    letter-spacing: .3em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+  }
+  .book-divider {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold-soft);
+    margin: .9rem auto;
+    opacity: .7;
+  }
+
+  /* ---------- Featured strip ---------- */
+  .featured {
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+  }
+  .featured-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  }
+  @media (max-width: 880px) {
+    .featured-grid { grid-template-columns: 1fr; }
+  }
+  .feat {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1.75rem;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+  }
+  .feat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -12px rgba(10, 31, 58, 0.25);
+    border-color: var(--teal);
+  }
+  .feat-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--teal-pale);
+    color: var(--teal-deep);
+    display: grid; place-items: center;
+    margin-bottom: 1rem;
+  }
+  .feat .eyebrow { color: var(--gold); font-size: .65rem; }
+  .feat h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+  .feat p { font-size: .98rem; color: var(--text-muted); margin: 0; }
+  .feat-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    margin-top: .9rem;
+    font-family: var(--majuscule);
+    font-size: .65rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+
+  /* ---------- Pull quote ---------- */
+  .pullquote {
+    padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    line-height: 1.45;
+    color: var(--navy-deep);
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .pullquote .quote-mark {
+    font-family: var(--display);
+    font-size: 5rem;
+    line-height: 0;
+    color: var(--gold);
+    display: block;
+    margin-bottom: .5rem;
+  }
+  .pullquote cite {
+    display: block;
+    font-family: var(--majuscule);
+    font-style: normal;
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+  }
+
+  /* ---------- About ---------- */
+  .page-head {
+    padding: clamp(3rem, 6vw, 5rem) var(--gutter) 2rem;
+    text-align: center;
+  }
+  .page-head .eyebrow { color: var(--gold); }
+  .about-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1rem var(--gutter) clamp(3rem, 5vw, 5rem);
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  .portrait {
+    aspect-ratio: 4/5;
+    background:
+      linear-gradient(160deg, var(--teal-deep) 0%, var(--navy) 60%, var(--navy-deep) 100%);
+    border-radius: 2px;
+    box-shadow: 0 14px 40px -16px rgba(10, 31, 58, 0.4);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .portrait::after {
+    content: "GN";
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--majuscule);
+    font-size: 5rem;
+    letter-spacing: .15em;
+    color: rgba(214, 181, 114, 0.55);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .portrait::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(214, 181, 114, 0.4);
+    pointer-events: none;
+  }
+  .portrait .caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.25rem;
+    background: linear-gradient(to top, rgba(10, 31, 58, 0.85), transparent);
+    color: var(--cream-soft);
+    font-family: var(--majuscule);
+    font-size: .65rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .about-body p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-size: 4.2rem;
+    line-height: .85;
+    float: left;
+    padding: .35rem .55rem 0 0;
+    color: var(--teal-deep);
+    font-weight: 500;
+  }
+  .credentials {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2rem;
+  }
+  @media (max-width: 540px) { .credentials { grid-template-columns: 1fr; } }
+  .credential .label {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .25rem;
+  }
+  .credential .value { font-size: .95rem; color: var(--text); line-height: 1.4; }
+
+  /* ---------- Library ---------- */
+  .lib-section {
+    padding: clamp(2.5rem, 5vw, 4rem) var(--gutter);
+  }
+  .lib-section.alt { background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .lib-head {
+    max-width: var(--max);
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .lib-head h2 { margin: 0; }
+
+  .video-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .video {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+    cursor: pointer;
+  }
+  .video:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -12px rgba(10, 31, 58, 0.22);
+  }
+  .video-thumb {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal-deep) 100%);
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .video-thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(214, 181, 114, 0.18), transparent 60%);
+  }
+  .play {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--cream-soft);
+    color: var(--navy-deep);
+    display: grid; place-items: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: transform .3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .video:hover .play { transform: scale(1.08); }
+  .play svg { margin-left: 3px; }
+  .video-meta {
+    padding: 1.1rem 1.25rem 1.25rem;
+  }
+  .video-meta .eyebrow { font-size: .6rem; color: var(--gold); margin-bottom: .35rem; }
+  .video-meta h4 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    color: var(--navy-deep);
+    margin: 0 0 .4rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .video-meta p { font-size: .9rem; color: var(--text-muted); margin: 0; }
+  .video-meta .duration {
+    font-family: var(--majuscule);
+    font-size: .58rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    margin-top: .55rem;
+    display: inline-block;
+  }
+
+  /* History papers */
+  .papers {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1.6rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    transition: transform .35s ease, border-color .35s ease;
+  }
+  .paper:hover { transform: translateY(-3px); border-color: var(--teal); }
+  .paper .pdf {
+    font-family: var(--majuscule);
+    font-size: .58rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .paper h4 {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    color: var(--navy-deep);
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .paper p { font-size: .92rem; color: var(--text-muted); margin: 0; flex: 1; }
+  .paper .actions { display: flex; gap: .8rem; align-items: center; margin-top: .25rem; }
+  .paper .actions a {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+  .paper .actions a + a { color: var(--text-muted); }
+
+  /* ---------- Blog ---------- */
+  .blog-feed {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem var(--gutter) clamp(3rem, 5vw, 5rem);
+  }
+  .post {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    align-items: start;
+    cursor: pointer;
+    transition: transform .3s ease;
+  }
+  .post:hover { transform: translateX(4px); }
+  .post:hover h3 { color: var(--teal-deep); }
+  @media (max-width: 600px) {
+    .post { grid-template-columns: 1fr; gap: .35rem; }
+  }
+  .post-date {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.35;
+  }
+  .post h3 { font-size: 1.45rem; margin-bottom: .35rem; transition: color .3s ease; }
+  .post p { color: var(--text-muted); margin-bottom: .35rem; }
+  .post .read {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+
+  .substack-cta {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 2rem var(--gutter);
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    text-align: center;
+  }
+  .substack-cta p { margin: 0 0 1.25rem; font-style: italic; color: var(--text); font-family: var(--display); font-size: 1.15rem; }
+
+  /* ---------- Store ---------- */
+  .store-cats {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    margin: 0 auto 2.5rem;
+    padding: 0 var(--gutter);
+    border-bottom: 1px solid var(--rule);
+    max-width: var(--max);
+  }
+  .cat-btn {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .75rem .25rem 1.25rem;
+    font-family: var(--majuscule);
+    font-size: .68rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    position: relative;
+    transition: color .3s ease;
+  }
+  .cat-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: -1px;
+    transform: translateX(-50%);
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width .3s ease;
+  }
+  .cat-btn.active, .cat-btn:hover { color: var(--navy-deep); }
+  .cat-btn.active::after { width: 100%; }
+
+  .product-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter) clamp(3rem, 5vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .product { display: none; flex-direction: column; gap: 1rem; }
+  .product.show { display: flex; }
+  .product-cover {
+    aspect-ratio: 2/3;
+    border-radius: 2px;
+    box-shadow: 0 10px 28px -10px rgba(10, 31, 58, 0.35);
+    position: relative;
+    overflow: hidden;
+    transition: transform .4s ease;
+    padding: 1.6rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--cream-soft);
+    cursor: pointer;
+  }
+  .product-cover::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(214, 181, 114, 0.4);
+    pointer-events: none;
+  }
+  .product-cover:hover { transform: translateY(-4px); }
+  .pc-1 { background: linear-gradient(140deg, var(--navy-deep) 0%, var(--teal-deep) 100%); }
+  .pc-2 { background: linear-gradient(140deg, var(--teal-deep) 0%, var(--navy) 100%); }
+  .pc-3 { background: linear-gradient(140deg, #1a3550 0%, #0c5b5b 100%); }
+  .pc-4 { background: linear-gradient(140deg, #143b3b 0%, #0a1f3a 100%); }
+  .pc-5 { background: linear-gradient(140deg, var(--navy) 0%, #0c4a4a 100%); }
+  .pc-6 { background: linear-gradient(140deg, #0c3252 0%, #1f7a7a 100%); }
+  .product-cover .who {
+    font-family: var(--majuscule);
+    font-size: .55rem;
+    letter-spacing: .3em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .product-cover h4 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    color: var(--cream-soft);
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+  }
+  .product-cover h4 em { color: var(--gold-soft); font-style: italic; }
+  .product-cover .who-bottom {
+    font-family: var(--majuscule);
+    font-size: .55rem;
+    letter-spacing: .25em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .product-info { padding: 0 .25rem; }
+  .product-info .tag {
+    font-family: var(--majuscule);
+    font-size: .58rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .35rem;
+  }
+  .product-info h5 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    color: var(--navy-deep);
+    margin: 0 0 .35rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .product-info .desc { color: var(--text-muted); font-size: .92rem; margin: 0 0 .65rem; }
+  .product-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .price {
+    font-family: var(--display);
+    font-size: 1.2rem;
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .price em { font-style: normal; color: var(--text-muted); font-size: .85rem; font-weight: 400; }
+  .add {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--navy-deep);
+    color: var(--navy-deep);
+    padding: .5rem .9rem;
+    font-family: var(--majuscule);
+    font-size: .58rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .25s ease;
+    border-radius: 2px;
+  }
+  .add:hover { background: var(--navy-deep); color: var(--cream-soft); }
+
+  /* Translations subsection */
+  .translations {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter) clamp(2rem, 4vw, 3rem);
+  }
+  .translations-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: clamp(2rem, 4vw, 3rem);
+    align-items: start;
+  }
+  @media (max-width: 880px) { .translations-card { grid-template-columns: 1fr; } }
+  .translations-card .eyebrow { color: var(--gold); }
+  .translations-card h3 {
+    font-family: var(--display);
+    font-size: 1.85rem;
+    color: var(--navy-deep);
+    margin: 0 0 .85rem;
+    font-weight: 500;
+  }
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .8rem;
+  }
+  @media (max-width: 540px) { .lang-grid { grid-template-columns: 1fr; } }
+  .lang {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: .85rem 1rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    transition: border-color .25s ease;
+  }
+  .lang:hover { border-color: var(--teal); }
+  .lang .name {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+  .lang .name span {
+    display: block;
+    font-family: var(--majuscule);
+    font-size: .54rem;
+    letter-spacing: .22em;
+    color: var(--text-muted);
+    margin-top: .15rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  .status {
+    font-family: var(--majuscule);
+    font-size: .55rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    padding: .25rem .55rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .status.s-avail { background: var(--teal-pale); color: var(--teal-deep); }
+  .status.s-prog { background: rgba(184, 146, 74, 0.15); color: var(--gold); }
+  .status.s-soon { background: rgba(20, 54, 94, 0.08); color: var(--text-muted); }
+
+  /* ---------- Donate ---------- */
+  .donate {
+    padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+    text-align: center;
+  }
+  .donate-hero {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .donate-amts {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .8rem;
+  }
+  @media (max-width: 600px) { .donate-amts { grid-template-columns: repeat(2, 1fr); } }
+  .amt {
+    appearance: none;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 1.25rem 1rem;
+    cursor: pointer;
+    font-family: var(--display);
+    font-size: 1.45rem;
+    color: var(--navy-deep);
+    font-weight: 600;
+    transition: all .25s ease;
+    border-radius: 2px;
+  }
+  .amt:hover, .amt.sel {
+    background: var(--navy-deep);
+    color: var(--cream-soft);
+    border-color: var(--navy-deep);
+    transform: translateY(-2px);
+  }
+  .donate-form {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .8rem;
+  }
+  @media (max-width: 600px) { .donate-form { grid-template-columns: 1fr; } }
+  .donate-form input {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: .9rem 1.2rem;
+    font-family: var(--display);
+    font-size: 1.1rem;
+    color: var(--navy-deep);
+    border-radius: 2px;
+  }
+  .donate-form input:focus { outline: none; border-color: var(--teal-deep); }
+  .impact {
+    max-width: 1000px;
+    margin: clamp(3rem, 5vw, 4rem) auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: clamp(3rem, 5vw, 4rem);
+    border-top: 1px solid var(--rule);
+  }
+  @media (max-width: 700px) { .impact { grid-template-columns: 1fr; } }
+  .impact-item { text-align: center; }
+  .impact-num {
+    font-family: var(--display);
+    font-size: 3rem;
+    color: var(--teal-deep);
+    line-height: 1;
+    margin-bottom: .35rem;
+    font-weight: 500;
+  }
+  .impact-label {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ---------- Real cover images (overrides decorative mockups) ---------- */
+  .book-cover.cover-image,
+  .product-cover.cover-image {
+    background: none;
+    padding: 0;
+  }
+  .book-cover.cover-image::before,
+  .product-cover.cover-image::before {
+    display: none;
+  }
+  .book-cover.cover-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 9px;
+    background: linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.15) 55%, transparent);
+    pointer-events: none;
+    z-index: 2;
+    inset: 0 auto 0 0;
+  }
+  .book-cover.cover-image img,
+  .product-cover.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  a.add {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site {
+    background: var(--navy-deep);
+    color: var(--cream-soft);
+    padding: clamp(3rem, 5vw, 4.5rem) var(--gutter) 1.5rem;
+    margin-top: 0;
+  }
+  .foot-grid {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+  @media (max-width: 880px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-brand .brand-mark { box-shadow: inset 0 0 0 2px rgba(214, 181, 114, 0.5); }
+  .foot-brand p {
+    color: rgba(245, 239, 225, 0.7);
+    font-size: .92rem;
+    line-height: 1.55;
+    margin-top: 1rem;
+    font-style: italic;
+    font-family: var(--display);
+  }
+  footer h5 {
+    font-family: var(--majuscule);
+    font-size: .7rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 0 0 1rem;
+  }
+  footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .55rem; }
+  footer ul a {
+    color: rgba(245, 239, 225, 0.78);
+    font-size: .95rem;
+  }
+  footer ul a:hover { color: var(--gold-soft); }
+  .foot-bottom {
+    max-width: var(--max);
+    margin: 3rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(214, 181, 114, 0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(245, 239, 225, 0.55);
+  }
+</style>
+</head>
+<body>
+
+<!-- Top strip -->
+<div class="topstrip">
+  <span>1 Peter 3:15</span> &nbsp;·&nbsp; Be ready to give an answer &nbsp;·&nbsp; <em>with gentleness and respect</em>
+</div>
+
+<!-- Header / Nav -->
+<header class="site">
+  <div class="site-inner">
+    <div class="brand" data-tab="home">
+      <div class="brand-mark">G</div>
+      <div class="brand-text">
+        <div class="t1">The Gentle Answer</div>
+        <div class="t2">Dr. Gordon Nickel</div>
+      </div>
+    </div>
+    <button class="menu-toggle" aria-label="Menu" id="menuToggle">Menu</button>
+    <nav class="tabs" id="tabs" role="tablist">
+      <button class="tab-btn" role="tab" aria-selected="true" data-tab="home">Home</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="about">About</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="library">Library</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="blog">Blog</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="store">Store</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="donate">Donate</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============== HOME ============== -->
+<section class="page active" id="page-home" role="tabpanel">
+  <div class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Scholarship <span class="dot"></span> in the spirit of dialogue</div>
+        <h1 class="display">A <em>gentle answer</em> to questions that have lingered for twelve centuries.</h1>
+        <p class="lede">The work of Dr. Gordon Nickel — writings on the Qur'an and the Bible, the long story of Christian–Muslim conversation in South Asia, and an invitation to read and reason together.</p>
+        <div class="hero-cta">
+          <button class="btn" data-tab="store">
+            Read the Books <span class="arrow">→</span>
+          </button>
+          <button class="btn ghost" data-tab="library">Watch the Series</button>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-cover cover-image" data-tab="store">
+          <img src="maingentleanswer.jpg" alt="The Gentle Answer to the Muslim Accusation of Biblical Falsification — book cover" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured -->
+  <section class="featured">
+    <div class="featured-grid">
+      <article class="feat" data-tab="library">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+        </div>
+        <div class="eyebrow">Video Series</div>
+        <h3>The Gentle Answer, in twelve short films</h3>
+        <p>A simple, unhurried explanation of each chapter — paired with downloadable summary PDFs prepared by a supporting pastor.</p>
+        <span class="feat-link">Enter the Library →</span>
+      </article>
+      <article class="feat" data-tab="library">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h12l4 4v12a0 0 0 0 1 0 0H4z"></path><polyline points="14 4 14 10 20 10"></polyline></svg>
+        </div>
+        <div class="eyebrow">Historical Research</div>
+        <h3>The story before <em>Izhar al-Haqq</em></h3>
+        <p>New, peer-reviewed research on the long history of Christian–Muslim interaction in South Asia — released as freely available, beautifully typeset PDFs.</p>
+        <span class="feat-link">Read the Papers →</span>
+      </article>
+      <article class="feat" data-tab="store">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+        </div>
+        <div class="eyebrow">Translations</div>
+        <h3>Six languages, in progress</h3>
+        <p>Bengali, Arabic, Mandarin Chinese, Telugu, Tamil, Urdu — each offered with a free chapter or two, with the full work available for a nominal fee.</p>
+        <span class="feat-link">See Translations →</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- Pull quote -->
+  <div class="pullquote container">
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+    <blockquote>
+      <span class="quote-mark">&ldquo;</span>
+      Dear reader, this book is an invitation to read and reason together — to invite friendly conversation between Muslims and non-Muslims, in a spirit that takes the questions of truth seriously.
+    </blockquote>
+    <cite>— from the opening of <em>The Gentle Answer</em></cite>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section class="page" id="page-about" role="tabpanel">
+  <div class="page-head">
+    <div class="eyebrow">About the Author</div>
+    <h1 class="display">Gordon D. Nickel</h1>
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Scholar of the Qur'an and its classical commentaries; historian of Christian–Muslim relations in South Asia.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="portrait">
+      <div class="caption">Gordon &amp; Gwenyth · Monashee Mountains, BC</div>
+    </div>
+    <div class="about-body">
+      <p>Now happily retired, Dr. Nickel lives with his wife Gwenyth in the midst of forests and clearwater lakes just west of the Monashee Mountains in British Columbia, where he continues to write in the areas of the Qur'an and its classical commentaries, and the long history of Christian–Muslim relations in South Asia.</p>
+
+      <p>His Christian commentary on the Qur'an was released in April 2020 by Zondervan/HarperCollins. He is presently working with Baylor University Press to publish an English translation of the first part of the earliest complete Muslim commentary on the Qur'an, by Muqātil ibn Sulaymān.</p>
+
+      <p>The work that became <em>The Gentle Answer</em> was begun at the request of Christian friends in India, who asked whether there were considered, scholarly answers to the accusations of <em>Izhar al-Haqq</em>. The book aims to remove obstacles that prevent Muslims and non-Muslims from reading and reasoning together — a slow, patient invitation rather than a polemic.</p>
+
+      <div class="credentials">
+        <div class="credential">
+          <div class="label">Doctoral Research</div>
+          <div class="value">Narratives of Tampering in the Earliest Commentaries on the Qur'an</div>
+        </div>
+        <div class="credential">
+          <div class="label">Forthcoming</div>
+          <div class="value">English translation of Muqātil ibn Sulaymān's <em>Tafsīr</em> (Baylor University Press)</div>
+        </div>
+        <div class="credential">
+          <div class="label">Areas of Study</div>
+          <div class="value">Qur'anic exegesis · Christian–Muslim relations · South Asian religious history</div>
+        </div>
+        <div class="credential">
+          <div class="label">Home</div>
+          <div class="value">British Columbia, Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== LIBRARY ============== -->
+<section class="page" id="page-library" role="tabpanel">
+  <div class="page-head">
+    <div class="eyebrow">The Library</div>
+    <h1 class="display">Films, summaries &amp; research</h1>
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+    <p class="lede" style="margin-left:auto;margin-right:auto">A growing archive of free resources to accompany Dr. Nickel's writing — short videos, chapter summaries, and historical research on the long story of Christian–Muslim interaction.</p>
+  </div>
+
+  <!-- Videos -->
+  <div class="lib-section">
+    <div class="lib-head">
+      <div>
+        <div class="eyebrow">Video Series</div>
+        <h2 class="section">The Gentle Answer in Twelve Films</h2>
+      </div>
+      <div style="font-family:var(--majuscule);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)">12 films · summary PDFs included</div>
+    </div>
+    <div class="video-grid">
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 1</div>
+          <h4>An Invitation to Read and Reason</h4>
+          <p>Why a gentle answer — the spirit of 1 Peter 3:15 and the long Christian-Muslim conversation.</p>
+          <span class="duration">9 min · summary PDF</span>
+        </div>
+      </article>
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 2</div>
+          <h4>What the Qur'an Says about Earlier Scriptures</h4>
+          <p>A careful reading of the Qur'an's own testimony to the Tawrāt and the Injīl.</p>
+          <span class="duration">11 min · summary PDF</span>
+        </div>
+      </article>
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 3</div>
+          <h4>Earliest Muslim Commentators</h4>
+          <p>How early <em>mufassirūn</em> approached questions of <em>tahrīf</em> — and what they did not say.</p>
+          <span class="duration">10 min · summary PDF</span>
+        </div>
+      </article>
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 4</div>
+          <h4>Manuscripts of the Hebrew Bible</h4>
+          <p>The astonishing 20th-century discoveries — and what they show about the Old Testament text.</p>
+          <span class="duration">12 min · summary PDF</span>
+        </div>
+      </article>
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 5</div>
+          <h4>Manuscripts of the New Testament</h4>
+          <p>What the manuscript tradition tells us about reliability — and what it cannot tell us.</p>
+          <span class="duration">10 min · summary PDF</span>
+        </div>
+      </article>
+      <article class="video">
+        <div class="video-thumb">
+          <div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+        </div>
+        <div class="video-meta">
+          <div class="eyebrow">Film 6</div>
+          <h4>The Question of the Qur'an's Text</h4>
+          <p>Recent research on the early Qur'an — Sanaa, Birmingham, and the questions they raise.</p>
+          <span class="duration">13 min · summary PDF</span>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <button class="btn ghost">View All Twelve Films <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- Historical Research -->
+  <div class="lib-section alt">
+    <div class="lib-head">
+      <div>
+        <div class="eyebrow">Historical Background</div>
+        <h2 class="section">Before &amp; after <em>Izhar al-Haqq</em></h2>
+      </div>
+    </div>
+    <p style="max-width:var(--max);margin:0 auto 2.25rem;color:var(--text-muted);font-family:var(--display);font-style:italic;font-size:1.15rem">The long story of Christian–Muslim interaction in South Asia that preceded — and then answered — Rahmatallah Kairanwi's polemic. Newly typeset, freely downloadable.</p>
+    <div class="papers">
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 48 pages
+        </div>
+        <h4>The Agra Debates of 1854</h4>
+        <p>An archival reconstruction of the public exchanges that lay behind the Izhar — the questions raised, the sources used, and what each side believed it had won.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 64 pages
+        </div>
+        <h4>Carl Pfander &amp; the Mizan al-Haqq</h4>
+        <p>The career and rhetoric of the missionary whose Persian and Urdu writings provoked Kairanwi's response — and what is often misunderstood about his approach.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 56 pages
+        </div>
+        <h4>Rahmatallah Kairanwi: A Life</h4>
+        <p>The biography of the scholar from Kairana whose 1864 polemic continues to shape Muslim apologetics — drawn from Urdu and Arabic sources.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 72 pages
+        </div>
+        <h4>The Reception in the Subcontinent</h4>
+        <p>How <em>Izhar al-Haqq</em> traveled through Urdu, Arabic, and English translations across South Asia — and the responses it elicited from Christian scholars in Lahore, Calcutta, and Madras.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 38 pages
+        </div>
+        <h4>Sayings of Jesus in Muslim Sources</h4>
+        <p>A survey of the remarkable corpus of Jesus-traditions preserved in classical Islamic literature — what they preserve, and what they tell us about early reading of the Gospels.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+      <article class="paper">
+        <div class="pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          PDF · 44 pages
+        </div>
+        <h4>South Indian Conversations</h4>
+        <p>A less-told history: Christian–Muslim conversation in Tamil-, Telugu-, and Kannada-speaking regions before and after the Izhar. Drawn from new archival research.</p>
+        <div class="actions"><a href="#">Read PDF</a><a href="#">Download</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BLOG ============== -->
+<section class="page" id="page-blog" role="tabpanel">
+  <div class="page-head">
+    <div class="eyebrow">Writing about Islam</div>
+    <h1 class="display">From the desk of Dr. Nickel</h1>
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Personal reflections on writing projects related to Islam, and discussion of the work of others in academia, news, and online — published on Substack and gathered here.</p>
+  </div>
+
+  <div class="blog-feed">
+    <article class="post">
+      <div class="post-date">Apr 22<br/>2026</div>
+      <div>
+        <h3>Reading Muqātil after Forty Years</h3>
+        <p>Notes from the long work of translating the earliest complete commentary on the Qur'an — and what it reveals about how the first Muslim readers understood their book.</p>
+        <span class="read">Read on Substack →</span>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-date">Mar 18<br/>2026</div>
+      <div>
+        <h3>The Gentle Answer in Bengali — A First Chapter</h3>
+        <p>A note on the launch of the Bengali translation, the translator who took it up, and what we hope readers in Bangladesh and West Bengal will find.</p>
+        <span class="read">Read on Substack →</span>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-date">Feb 09<br/>2026</div>
+      <div>
+        <h3>Why the Izhar al-Haqq still matters</h3>
+        <p>A 160-year-old book continues to shape Muslim apologetics. A short reflection on why a careful, patient answer remains worth the effort.</p>
+        <span class="read">Read on Substack →</span>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-date">Jan 14<br/>2026</div>
+      <div>
+        <h3>On Sanaa, on Birmingham, on caution</h3>
+        <p>The recent manuscript discoveries are remarkable — and they should be discussed without overstatement on either side.</p>
+        <span class="read">Read on Substack →</span>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post-date">Dec 02<br/>2025</div>
+      <div>
+        <h3>A note from the Monashees</h3>
+        <p>Year-end reflections on writing, walking, and the mountains.</p>
+        <span class="read">Read on Substack →</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="substack-cta">
+    <p>"Personal reflections on writing projects related to Islam — and the writing of others."</p>
+    <a href="https://gordonnickel.substack.com/" target="_blank" rel="noopener" class="btn">Subscribe on Substack <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ============== STORE ============== -->
+<section class="page" id="page-store" role="tabpanel">
+  <div class="page-head">
+    <div class="eyebrow">The Store</div>
+    <h1 class="display">Books, translations &amp; more</h1>
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+    <p class="lede" style="margin-left:auto;margin-right:auto">Dr. Nickel's published books, growing translations into the languages of the Muslim world, and — for those who enjoy a different kind of reading — a small shelf of detective fiction.</p>
+  </div>
+
+  <div class="store-cats" role="tablist">
+    <button class="cat-btn active" data-cat="all">All</button>
+    <button class="cat-btn" data-cat="scholarship">Scholarship</button>
+    <button class="cat-btn" data-cat="fiction">Detective Fiction</button>
+    <button class="cat-btn" data-cat="translations">Translations</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- Scholarship -->
+    <div class="product show" data-cat="scholarship">
+      <div class="product-cover pc-1 cover-image">
+        <img src="maingentleanswer.jpg" alt="The Gentle Answer to the Muslim Accusation of Biblical Falsification — book cover" />
+      </div>
+      <div class="product-info">
+        <div class="tag">Academic Edition · 2015</div>
+        <h5>The Gentle Answer to the Muslim Accusation of Biblical Falsification</h5>
+        <p class="desc">A 502-page scholarly response — and a friendly invitation to read and reason together.</p>
+        <div class="product-foot">
+          <div class="price">CA$26.12</div>
+          <a class="add" href="https://a.co/d/01JkPYB0" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product show" data-cat="scholarship">
+      <div class="product-cover pc-2">
+        <div class="who">A Christian Commentary</div>
+        <h4>The <em>Qur'an</em><br/>with Christian Commentary</h4>
+        <div class="who-bottom">Zondervan · 2020</div>
+      </div>
+      <div class="product-info">
+        <div class="tag">Reference · 2020</div>
+        <h5>The Quran with Christian Commentary</h5>
+        <p class="desc">A verse-by-verse commentary on the Qur'an from a careful Christian reader, published by Zondervan/HarperCollins.</p>
+        <div class="product-foot">
+          <div class="price">$44.99</div>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product show" data-cat="scholarship">
+      <div class="product-cover pc-3">
+        <div class="who">Forthcoming · Baylor</div>
+        <h4>Tafsīr<br/><em>Muqātil</em></h4>
+        <div class="who-bottom">Translated by G. Nickel</div>
+      </div>
+      <div class="product-info">
+        <div class="tag">Translation · Forthcoming</div>
+        <h5>Tafsīr of Muqātil ibn Sulaymān, Part One</h5>
+        <p class="desc">The first English translation of the earliest complete Muslim commentary on the Qur'an.</p>
+        <div class="product-foot">
+          <div class="price"><em>Pre-order soon</em></div>
+          <button class="add">Notify Me</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiction -->
+    <div class="product show" data-cat="fiction">
+      <div class="product-cover pc-4">
+        <div class="who">A Mystery</div>
+        <h4>Margins of<br/>the <em>Mîzân</em></h4>
+        <div class="who-bottom">A Detective Novel</div>
+      </div>
+      <div class="product-info">
+        <div class="tag">Fiction · Mystery</div>
+        <h5>Margins of the Mîzân</h5>
+        <p class="desc">A scholar of Islamic manuscripts is drawn into a quiet, dangerous puzzle written into the margins of an old book.</p>
+        <div class="product-foot">
+          <div class="price">$14.95</div>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product show" data-cat="fiction">
+      <div class="product-cover pc-5">
+        <div class="who">A Mystery · New</div>
+        <h4>The Fifth<br/>Tower of the<br/><em>Charminar</em></h4>
+        <div class="who-bottom">A Detective Novel</div>
+      </div>
+      <div class="product-info">
+        <div class="tag">Fiction · Mystery</div>
+        <h5>The Fifth Tower of the Charminar</h5>
+        <p class="desc">In the old city of Hyderabad, a centuries-old riddle and a very modern theft draw an unlikely investigator into the four — and a fifth — towers of the Charminar.</p>
+        <div class="product-foot">
+          <div class="price">$15.95</div>
+          <button class="add">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Translations placeholder -->
+    <div class="product show" data-cat="translations">
+      <div class="product-cover pc-6">
+        <div class="who">অনুবাদ · Bengali</div>
+        <h4>The <em>Gentle</em><br/>Answer</h4>
+        <div class="who-bottom">বাংলা সংস্করণ</div>
+      </div>
+      <div class="product-info">
+        <div class="tag">Translation · Bengali</div>
+        <h5>The Gentle Answer — Bengali Edition</h5>
+        <p class="desc">First two chapters available free. The complete PDF is offered for a nominal fee that supports further translation work.</p>
+        <div class="product-foot">
+          <div class="price">$5.00 <em>· 2 ch. free</em></div>
+          <button class="add">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Translations card -->
+  <div class="translations">
+    <div class="translations-card">
+      <div>
+        <div class="eyebrow">Translations Programme</div>
+        <h3>The Gentle Answer in the languages of the Muslim world</h3>
+        <p>The book was written for conversation. We are slowly making it available in the languages where that conversation most needs to happen — partnering with translators who know the readers and the context.</p>
+        <p style="font-style:italic;color:var(--text-muted);font-family:var(--display)">For each language: a chapter or two offered freely, with the complete translated PDF available for a nominal fee that supports the next translation.</p>
+      </div>
+      <div class="lang-grid">
+        <div class="lang">
+          <div class="name">Bengali <span>বাংলা</span></div>
+          <span class="status s-avail">Available</span>
+        </div>
+        <div class="lang">
+          <div class="name">Urdu <span>اُردُو</span></div>
+          <span class="status s-prog">In progress · Peter Percy</span>
+        </div>
+        <div class="lang">
+          <div class="name">Arabic <span>العربية</span></div>
+          <span class="status s-prog">In progress</span>
+        </div>
+        <div class="lang">
+          <div class="name">Mandarin <span>中文</span></div>
+          <span class="status s-prog">In progress</span>
+        </div>
+        <div class="lang">
+          <div class="name">Tamil <span>தமிழ்</span></div>
+          <span class="status s-soon">Planned · Arputharaj</span>
+        </div>
+        <div class="lang">
+          <div class="name">Telugu <span>తెలుగు</span></div>
+          <span class="status s-soon">Planned · Bangalore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DONATE ============== -->
+<section class="page" id="page-donate" role="tabpanel">
+  <div class="page-head">
+    <div class="eyebrow">Support the Work</div>
+    <h1 class="display">Underwrite a quiet conversation</h1>
+    <div class="ornament" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L13.5 9 L21 10 L15 14 L17 21 L12 17 L7 21 L9 14 L3 10 L10.5 9 Z"/></svg>
+    </div>
+  </div>
+
+  <div class="donate">
+    <div class="donate-hero">
+      <p class="lede" style="margin:0 auto 1.25rem">Your gift directly supports translation work into Bengali, Arabic, Mandarin, Urdu, Tamil, and Telugu — as well as the production of free films, summary PDFs, and historical research papers.</p>
+      <p style="color:var(--text-muted);font-family:var(--display);font-style:italic">Every translated chapter, every short film, every freely-given PDF is the work of someone whose time you can help honour.</p>
+
+      <div class="donate-amts">
+        <button class="amt">$25</button>
+        <button class="amt sel">$50</button>
+        <button class="amt">$100</button>
+        <button class="amt">$250</button>
+      </div>
+      <div class="donate-form">
+        <input type="text" placeholder="Other amount (USD)" />
+        <button class="btn">Give Now <span class="arrow">→</span></button>
+      </div>
+      <p style="font-family:var(--majuscule);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);margin-top:1.5rem">One-time &nbsp;·&nbsp; Monthly &nbsp;·&nbsp; In honour of</p>
+    </div>
+
+    <div class="impact">
+      <div class="impact-item">
+        <div class="impact-num">$25</div>
+        <div class="impact-label">Funds one chapter of translation</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">$100</div>
+        <div class="impact-label">Underwrites a summary PDF series</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">$500</div>
+        <div class="impact-label">Brings a full translation to publication</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-text">
+          <div class="t1" style="color:var(--cream-soft)">The Gentle Answer</div>
+          <div class="t2" style="color:var(--gold-soft)">Dr. Gordon Nickel</div>
+        </div>
+      </div>
+      <p>"Always be ready to give an answer to anyone who asks you for the reason of the hope that is in you — yet with gentleness and respect." &nbsp;— 1 Peter 3:15</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="#" data-tab="home">Home</a></li>
+        <li><a href="#" data-tab="about">About</a></li>
+        <li><a href="#" data-tab="library">Library</a></li>
+        <li><a href="#" data-tab="blog">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Read &amp; Watch</h5>
+      <ul>
+        <li><a href="#" data-tab="store">Books</a></li>
+        <li><a href="#" data-tab="store">Translations</a></li>
+        <li><a href="#" data-tab="library">Films</a></li>
+        <li><a href="#" data-tab="library">Research PDFs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://gordonnickel.substack.com/" target="_blank" rel="noopener">Substack</a></li>
+        <li><a href="#" data-tab="donate">Donate</a></li>
+        <li><a href="mailto:contact@thegentleanswer.com">Contact</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Gordon D. Nickel · All Rights Reserved</div>
+    <div>Made with care · BC, Canada</div>
+  </div>
+</footer>
+
+<script>
+  // Tabs
+  const tabs = document.querySelectorAll('.tab-btn');
+  const pages = document.querySelectorAll('.page');
+  const navMenu = document.getElementById('tabs');
+  const menuToggle = document.getElementById('menuToggle');
+
+  function activate(tabName) {
+    tabs.forEach(t => {
+      const isActive = t.dataset.tab === tabName;
+      t.setAttribute('aria-selected', isActive);
+    });
+    pages.forEach(p => {
+      p.classList.toggle('active', p.id === `page-${tabName}`);
+    });
+    // Smooth scroll to top of main
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close mobile nav
+    navMenu.classList.remove('open');
+  }
+
+  // Wire up every element with data-tab
+  document.querySelectorAll('[data-tab]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const t = el.dataset.tab;
+      if (t) activate(t);
+    });
+  });
+
+  // Mobile menu toggle
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+
+  // Store category filter
+  const catBtns = document.querySelectorAll('.cat-btn');
+  const products = document.querySelectorAll('.product');
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      products.forEach(p => {
+        p.classList.toggle('show', cat === 'all' || p.dataset.cat === cat);
+      });
+    });
+  });
+
+  // Donation amount selection
+  const amts = document.querySelectorAll('.amt');
+  amts.forEach(a => {
+    a.addEventListener('click', () => {
+      amts.forEach(x => x.classList.remove('sel'));
+      a.classList.add('sel');
+    });
+  });
+</script>
+
+</body>
+</html>
