@@ -1010,7 +1010,7 @@
     line-height: 1.2;
   }
   .product-info .desc { color: var(--text-muted); font-size: .92rem; margin: 0 0 .65rem; }
-  .product-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .product-foot { display: flex; justify-content: flex-end; align-items: center; gap: .75rem; flex-wrap: wrap; }
   .price {
     font-family: var(--display);
     font-size: 1.2rem;
@@ -1033,6 +1033,13 @@
     border-radius: 2px;
   }
   .add:hover { background: var(--navy-deep); color: var(--cream-soft); }
+  .buy-links {
+    display: flex;
+    gap: .4rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .buy-links .add { padding: .45rem .6rem; letter-spacing: .12em; }
 
   /* Translations subsection */
   .translations {
@@ -1744,8 +1751,10 @@
         <h5>The Gentle Answer to the Muslim Accusation of Biblical Falsification</h5>
         <p class="desc">A 502-page scholarly response — and a friendly invitation to read and reason together.</p>
         <div class="product-foot">
-          <div class="price">CA$26.12</div>
-          <a class="add" href="https://a.co/d/01JkPYB0" target="_blank" rel="noopener">Buy on Amazon</a>
+          <div class="buy-links">
+            <a class="add" href="https://www.amazon.ca/Gentle-Answer-Accusation-Biblical-Falsification/dp/099399721X/" target="_blank" rel="noopener">Amazon.ca</a>
+            <a class="add" href="https://www.amazon.com/Gentle-Answer-Accusation-Biblical-Falsification/dp/099399721X/" target="_blank" rel="noopener">Amazon.com</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1761,8 +1770,10 @@
         <h5>The Quran with Christian Commentary</h5>
         <p class="desc">A verse-by-verse commentary on the Qur'an from a careful Christian reader, published by Zondervan/HarperCollins.</p>
         <div class="product-foot">
-          <div class="price">$44.99</div>
-          <button class="add">Add to Cart</button>
+          <div class="buy-links">
+            <a class="add" href="https://www.amazon.ca/Quran-Christian-Commentary-Understanding-Scripture/dp/0310534720/" target="_blank" rel="noopener">Amazon.ca</a>
+            <a class="add" href="https://www.amazon.com/Quran-Christian-Commentary-Understanding-Scripture/dp/0310534720/" target="_blank" rel="noopener">Amazon.com</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1778,7 +1789,7 @@
         <h5>Tafsīr of Muqātil ibn Sulaymān, Part One</h5>
         <p class="desc">The first English translation of the earliest complete Muslim commentary on the Qur'an.</p>
         <div class="product-foot">
-          <div class="price"><em>Pre-order soon</em></div>
+          <div class="price" style="margin-right:auto"><em>Pre-order soon</em></div>
           <button class="add">Notify Me</button>
         </div>
       </div>
@@ -1794,8 +1805,10 @@
         <h5>Margins of the Mîzân</h5>
         <p class="desc">A scholar of Islamic manuscripts is drawn into a quiet, dangerous puzzle written into the margins of an old book.</p>
         <div class="product-foot">
-          <div class="price">CA$14.88</div>
-          <a class="add" href="https://a.co/d/0gCUS4fG" target="_blank" rel="noopener">Buy on Amazon</a>
+          <div class="buy-links">
+            <a class="add" href="https://www.amazon.ca/MARGINS-M%C3%8EZ%C3%82N-Shafqat-Baig-mystery-ebook/dp/B084DDKCQ4/" target="_blank" rel="noopener">Amazon.ca</a>
+            <a class="add" href="https://www.amazon.com/MARGINS-M%C3%8EZ%C3%82N-Shafqat-Baig-mystery-ebook/dp/B084DDKCQ4/" target="_blank" rel="noopener">Amazon.com</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1810,10 +1823,6 @@
         <div class="tag">Fiction · Mystery</div>
         <h5>The Fifth Tower of the Charminar</h5>
         <p class="desc">In the old city of Hyderabad, a centuries-old riddle and a very modern theft draw an unlikely investigator into the four — and a fifth — towers of the Charminar.</p>
-        <div class="product-foot">
-          <div class="price">$15.95</div>
-          <button class="add">Add to Cart</button>
-        </div>
       </div>
     </div>
 
@@ -1829,7 +1838,7 @@
         <h5>The Gentle Answer — Bengali Edition</h5>
         <p class="desc">First two chapters available free. The complete PDF is offered for a nominal fee that supports further translation work.</p>
         <div class="product-foot">
-          <div class="price">$5.00 <em>· 2 ch. free</em></div>
+          <div class="price" style="margin-right:auto"><em>2 ch. free</em></div>
           <button class="add">View</button>
         </div>
       </div>
