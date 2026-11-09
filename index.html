@@ -842,6 +842,125 @@
     margin: 0 auto;
     padding: 1rem var(--gutter) clamp(3rem, 5vw, 5rem);
   }
+
+  /* Featured essay card (full articles/PDFs within blog) */
+  .featured-essay {
+    display: block;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: clamp(1.75rem, 3.5vw, 2.5rem);
+    margin: 1.75rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+  .featured-essay::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold) 0%, var(--teal-deep) 100%);
+  }
+  .featured-essay:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px -14px rgba(10, 31, 58, 0.25);
+    border-color: var(--teal);
+  }
+  .featured-essay-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .featured-essay-badge {
+    font-family: var(--majuscule);
+    font-size: .6rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .featured-essay-badge .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .featured-essay-date {
+    font-family: var(--majuscule);
+    font-size: .6rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .featured-essay h3 {
+    font-family: var(--display);
+    font-size: clamp(1.55rem, 2.6vw, 2.05rem);
+    line-height: 1.15;
+    color: var(--navy-deep);
+    margin: 0 0 .9rem;
+    font-weight: 500;
+    letter-spacing: -.005em;
+  }
+  .featured-essay h3 em { font-style: italic; color: var(--teal-deep); font-weight: 500; }
+  .featured-essay .essay-lede {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0 0 1.1rem;
+  }
+  .featured-essay .essay-abstract {
+    font-size: .98rem;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+  }
+  .featured-essay-actions {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .featured-essay-actions .btn {
+    padding: .7rem 1.15rem;
+    font-size: .64rem;
+  }
+  .essay-meta {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--majuscule);
+    font-size: .58rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .essay-meta span { display: inline-flex; align-items: center; gap: .4rem; }
+  .essay-meta svg { color: var(--teal-deep); }
+
+  .blog-section-label {
+    font-family: var(--majuscule);
+    font-size: .62rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 2.5rem 0 .25rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+  }
   .post {
     padding: 2rem 0;
     border-bottom: 1px solid var(--rule);
@@ -1674,6 +1793,40 @@
   </div>
 
   <div class="blog-feed">
+
+    <!-- Featured Essay (full draft paper) -->
+    <article class="featured-essay">
+      <div class="featured-essay-head">
+        <div class="featured-essay-badge">
+          <span class="dot"></span> Featured Essay · Draft
+        </div>
+        <div class="featured-essay-date">November 2026</div>
+      </div>
+      <h3>The Christology of Divine Identity between <em>Paul</em> and the Quran</h3>
+      <p class="essay-lede">How might the New Testament Paul have responded to Qur'anic denials of the deity of Jesus?</p>
+      <p class="essay-abstract">Bringing the writings of Paul into conversation with Qur'anic passages that distinguish Muslim monotheism from Christian beliefs about the identity of Jesus. Drawing on Richard Bauckham's "Christology of divine identity" in the context of Second Temple Jewish monotheism — and on the earliest complete Muslim commentary on the Qur'an, by Muqātil ibn Sulaymān — this draft essay asks whether Paul's explanation could be seen to anticipate Islamic denials of Jesus' deity as developed in the doctrine of <em>tawḥīd</em>.</p>
+      <div class="featured-essay-actions">
+        <a href="articles/Christology of Divine Identity between Paul and the Quran.pdf" target="_blank" rel="noopener" class="btn">Read the Essay <span class="arrow">→</span></a>
+        <a href="articles/Christology of Divine Identity between Paul and the Quran.pdf" download class="btn ghost">Download PDF</a>
+      </div>
+      <div class="essay-meta">
+        <span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          PDF · 26 pages
+        </span>
+        <span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Gordon D. Nickel
+        </span>
+        <span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Working draft
+        </span>
+      </div>
+    </article>
+
+    <div class="blog-section-label">From the Substack — Writing about Islam</div>
+
     <article class="post">
       <div class="post-date">Apr 22<br/>2026</div>
       <div>
